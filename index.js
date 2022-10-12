@@ -8,10 +8,10 @@ const fs = require('fs');
 const questions = [
     {
         type: 'input',
-        name: 'username',
+        name: 'github',
         message: "What is your GitHub username?",
-        validate: usernameInput => {
-            if (usernameInput) {
+        validate: githubInput => {
+            if (githubInput) {
                 return true;
             } else {
                 console.log("Please enter your GitHub username.");
@@ -22,9 +22,9 @@ const questions = [
     {
         type: 'input',
         name: 'email',
-        message: "What your email?",
-        validate: nameInput => {
-            if (nameInput) {
+        message: "What is your email?",
+        validate: emailInput => {
+            if (emailInput) {
                 return true;
             } else {
                 console.log("Please enter email.");
@@ -34,10 +34,10 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'name', //should the value be title since line16 in generateMarkdown.js is 'data.title'?
+        name: 'title', //should the value be title since line16 in generateMarkdown.js is 'data.title'?
         message: "What is the name of your project?",
-        validate: nameInput => {
-            if (nameInput) {
+        validate: titleInput => {
+            if (titleInput) {
                 return true;
             } else {
                 console.log("Please enter your project's name.");
@@ -125,19 +125,28 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) { }
+function writeToFile(filename, data) {
+
+ }
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(questions)
-    .then((inquirerResponse, data) => {
-        console.log("Creating ReadMe File");
-        fs.writeFile("ReadMe.md", inquirerResponse, data);
+   return inquirer.prompt(questions)
+    .then((data) => {
+        const mark = generateMarkdown(data);
+        fs.writeFile('./develop/README.md', mark, err => {
+            if (err) {
+                console.log('Could not save README.md file')
+            } else {
+                console.log('Success: new README.md file generated inside the develop folder.')
+            }
+        })
+        console.log(data);
+        // return data
     })
-    // .catch((err) => {
-    //     console.log(err);
-    // })
-    // console.log('ReadMe file created! Check out README.md in this directory to see it!');
+    .catch((err) => {
+        console.log(err);
+    })
 }
 
 // Function call to initialize app
