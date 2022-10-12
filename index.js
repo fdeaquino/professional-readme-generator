@@ -8,10 +8,10 @@ const fs = require('fs');
 const questions = [
     {
         type: 'input',
-        name: 'username',
+        name: 'github',
         message: "What is your GitHub username?",
-        validate: usernameInput => {
-            if (usernameInput) {
+        validate: githubInput => {
+            if (githubInput) {
                 return true;
             } else {
                 console.log("Please enter your GitHub username.");
@@ -129,14 +129,14 @@ function writeToFile(fileName, data) { }
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(questions)
-    .then((inquirerResponse, data) => {
-        console.log("Creating ReadMe File");
-        fs.writeFile("ReadMe.md", inquirerResponse, data);
+   return inquirer.prompt(questions)
+    .then((data) => {
+        console.log(data);
+        return data
     })
-    // .catch((err) => {
-    //     console.log(err);
-    // })
+    .catch((err) => {
+        console.log(err);
+    })
     // console.log('ReadMe file created! Check out README.md in this directory to see it!');
 }
 

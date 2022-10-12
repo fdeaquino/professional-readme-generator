@@ -16,34 +16,35 @@ function generateMarkdown(data) {
   # ${data.title}
   ${data.username}
 
-  # Table of Contents
-  -[description](#Description)
-  -[installation](#Installation)
-  -[licenses](#Licenses)
-  - 
-  - 
-  - 
+  ## Table of Contents
+  -[Project Description](#Description)
+  -[Installation](#Installation)
+  -[Usage](#Usage)
+  -[Licenses](#Licenses) 
+  -[Contribution](#Contribution)
+  -[Testing](#Testing)
 
-  ##Description
-  ${data.description.toUpperCase()}
+  ## Description
+  ${data.description}
   
-  ##Installation
-  ${data.installation.toUpperCase()}
+  ## Installation
+  ${data.installation}
   
-  ##Usage
-  ${data.usage.toUpperCase()}
+  ## Usage
+  ${data.usage}
 
-  ##Licenses
-  ${data.licenses.toUpperCase()}
+  ## Licenses
+  ${data.licenses}
 
-  ##Contribution
-  ${data.contribution.toUpperCase()}
+  ## Contribution
+  ${data.contribution}
 
-  ##Testing
-  ${data.tests.toUpperCase()}
+  ## Testing
+  ${data.tests}
 
-  ##__
-  ${__}
+  ## Questions
+  ${data.email}
+  ${data.github}
 
   ##__
   ${__}
