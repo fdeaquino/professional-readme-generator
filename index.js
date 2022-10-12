@@ -1,14 +1,41 @@
 // TODO: Include packages needed for this application
 //Should I use VAR(from inquirer 8.2.4 documentation) or CONST (bc instructor said to stop using var)??
-const inquirer = require('inquirer'); 
-const generateMarkdown = require('./src/page-template');
+const inquirer = require('inquirer');
+const generateMarkdown = require('./develop/utils/generateMarkdown');
+const fs = require('fs');
 
 // TODO: Create an array of questions for user input
 const questions = [
     {
         type: 'input',
-        name: 'name', 
-        message: "What is the name of your project?", 
+        name: 'username',
+        message: "What is your GitHub username?",
+        validate: usernameInput => {
+            if (usernameInput) {
+                return true;
+            } else {
+                console.log("Please enter your GitHub username.");
+                return false;
+            }
+        }
+    }, 
+    {
+        type: 'input',
+        name: 'email',
+        message: "What your email?",
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log("Please enter email.");
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'name', //should the value be title since line16 in generateMarkdown.js is 'data.title'?
+        message: "What is the name of your project?",
         validate: nameInput => {
             if (nameInput) {
                 return true;
@@ -17,7 +44,7 @@ const questions = [
                 return false;
             }
         }
-    }, 
+    },
     {
         type: 'input',
         name: 'description',
@@ -35,7 +62,7 @@ const questions = [
         // Come back to revise Installation Instructions
         type: 'input',
         name: 'installation',
-        message: 'Provide a installation instructions for your project. (Required)',
+        message: 'Provide installation instructions for your project. (Required)',
         validate: installationInput => {
             if (installationInput) {
                 return true;
@@ -47,28 +74,71 @@ const questions = [
     },
     {
         // Come back to Usage Information
-    }, 
+        type: 'input',
+        name: 'usage',
+        message: 'What does the user need to know about using the repo? (Required)',
+        validate: usageInput => {
+            if (usageInput) {
+                return true;
+            } else {
+                console.log('Please describe how to use your project.');
+                return false;
+            }
+        }
+    },
     {
         // Come back to revise license information (Should this be checkboxes?)
         type: 'checkbox',
-        name: 'license',
-        message: 'What is the license type for your project? (Choose one)',
-        choices: ['option1', 'option2', 'option3', 'option4', 'option5']
-    }, 
+        name: 'licenses',
+        message: 'What license does your project have? (Choose one)',
+        choices: ['MIT', 'GPL 3.0', 'Apache 2.0', 'BSD 3', 'None']
+    },
     {
         // Come back to Contribution guidelines
-    }, 
+        type: 'input',
+        name: 'contribution',
+        message: 'Who contributed to this project? Please enter their GitHub usernames. (Required)',
+        validate: contributionInput => {
+            if (contributionInput) {
+                return true;
+            } else {
+                console.log('Who were the contributers to this project?');
+                return false;
+            }
+        }
+    },
     {
         // Come back to Tests
+        type: 'input',
+        name: 'tests',
+        message: 'What is the test process for this project? (Required)', 
+        validate: testsInput => {
+            if (testsInput) {
+                return true;
+            } else {
+                console.log('Please describe the testing process of your project.');
+                return false;
+            }
+        }
     }
 
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) { }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions)
+    .then((inquirerResponse, data) => {
+        console.log("Creating ReadMe File");
+        fs.writeFile("ReadMe.md", inquirerResponse, data);
+    })
+    // .catch((err) => {
+    //     console.log(err);
+    // })
+    // console.log('ReadMe file created! Check out README.md in this directory to see it!');
+}
 
 // Function call to initialize app
 init();
@@ -76,7 +146,7 @@ init();
 
 
 
-console.log("Hello Node!");
+// console.log("Hello Node!");
 
 
 
