@@ -40,7 +40,8 @@ function renderLicenseSection(licenses) {
   if (licenses != 'None') {
     return `
 ## License
-[${licenses}](${renderLicenseLink(licenses)})`;
+${renderLicenseBadge(licenses)}
+[Click Here For License Info](${renderLicenseLink(licenses)})`;
   } else {
     return '';
   }
@@ -69,8 +70,7 @@ ${data.installation}
 ## Usage
 ${data.usage}
 
-## License
-${data.licenses}
+${renderLicenseSection(data.licenses)}
 
 ## Contribution
 ${data.contribution}
