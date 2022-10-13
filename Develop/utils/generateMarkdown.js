@@ -59,7 +59,7 @@ ${data.description}
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#licenses) 
+- [License](#license) 
 - [Contribution](#contribution)
 - [Testing](#testing)
 - [Questions](#questions)
