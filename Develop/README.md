@@ -1,4 +1,4 @@
-# ExampleTitle
+# Very-Cool-Example-Project
 
 ## Table of Contents
 - [Project Description](#description)
@@ -10,25 +10,25 @@
 - [Questions](#questions)
 
 ## Project Description
-ExampleDescription
+This Project is very cool.
 
 ## Installation
-ExampleInstructions
+Very cool instructions
 
 ## Usage
-ExampleUsage
+Need to be very cool.
 
 ## Licenses
 MIT
 
 ## Contribution
-ExampleContributor
+Very cool contributors.
 
 ## Testing
-ExampleTesting
+Very cool testing.
 
 ## Questions
-If you have questions about this project, please feel free to reach out via email. ExampleUser@email.com
+If you have questions about this project, please feel free to reach me via [email](exampleemail@email.com). exampleemail@email.com
 
-Explore my projects at [GitHub](https://github.com/ExampleUser)
+Explore more of my projects on [GitHub](https://github.com/ExampleUsername)
 
