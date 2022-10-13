@@ -128,6 +128,7 @@ const questions = [
 // TODO: Create a function to initialize app
 // 
 function init() {
+
     return inquirer.prompt(questions)
         .then((data) => {
             const mark = generateMarkdown(data);
