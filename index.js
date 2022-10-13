@@ -59,10 +59,10 @@ const questions = [
         }
     },
     {
-        // Come back to revise Installation Instructions
+        
         type: 'input',
         name: 'installation',
-        message: 'Provide installation instructions for your project. (Required)',
+        message: 'Provide installation instructions for your project. (Required)    Type "N/A" if no Installation Instructions are needed.',
         validate: installationInput => {
             if (installationInput) {
                 return true;
@@ -73,10 +73,10 @@ const questions = [
         }
     },
     {
-        // Come back to Usage Information
+        
         type: 'input',
         name: 'usage',
-        message: 'What does the user need to know about using the repo? (Required)',
+        message: 'What does the user need to know about using your project? (Required)   Type "N/A" if you do not want to provide User Instructions.',
         validate: usageInput => {
             if (usageInput) {
                 return true;
@@ -87,17 +87,17 @@ const questions = [
         }
     },
     {
-        // Come back to revise license information (Should this be checkboxes?)
+        
         type: 'list',
         name: 'licenses',
-        message: 'What license does your project have? (Please choose one)',
+        message: 'What license does your project have? (Please choose one option)',
         choices: ['MIT', 'GPL: General Public Use License', 'Apache License 2.0', 'ISC', 'None']
     },
     {
-        // Come back to Contribution guidelines
+        
         type: 'input',
         name: 'contribution',
-        message: 'Who contributed to this project? Please enter their GitHub usernames. (Required)',
+        message: 'Who contributed to this project? Please enter their GitHub usernames. (Required)    Type "N/A" if you do not want to add Contributors.',
         validate: contributionInput => {
             if (contributionInput) {
                 return true;
@@ -108,10 +108,10 @@ const questions = [
         }
     },
     {
-        // Come back to Tests
+        
         type: 'input',
         name: 'tests',
-        message: 'What is the test process for this project? (Required)',
+        message: 'What is the test process for this project? (Required)    Type "N/A" if Testing Process does not apply.',
         validate: testsInput => {
             if (testsInput) {
                 return true;
