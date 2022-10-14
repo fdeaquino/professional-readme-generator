@@ -18,7 +18,7 @@ To install, you will need to clone this GitHub repository. Then, using the termi
 
 ## Usage
 
-Please follow [this video guide](INSERT VIDEO LINK HERE) for using the README Generator or follow the steps below.
+Please follow [this video guide](https://drive.google.com/file/d/1pwkSOpcD6mh-EgKUcMg9w4O2X2fLjHYq/view?usp=sharing) for using the README Generator or follow the steps below.
 
 1. Open the terminal in your local machine
 1. Navigate to the root directory of this project
